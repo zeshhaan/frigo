@@ -2,19 +2,25 @@
 
 An toy http server written in Elixir to learn about the language and OTP.
 
-## Installation
+## Description
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `frigo` to your list of dependencies in `mix.exs`:
+We want to build a http server that sends requests and handles responses.
 
-```elixir
-def deps do
-  [
-    {:frigo, "~> 0.1.0"}
-  ]
-end
+The request is of the form
+
+```http
+GET /wildthings HTTP/1.1
+Host: example.com
+User-Agent: ExampleBrowser/1.0
+Accept: */*
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/frigo>.
+and the response is of the form
+
+```http
+HTTP/1.1 200 OK
+Content-Type: text/plain
+Content-Length: 12
+
+Hello World!
+```
